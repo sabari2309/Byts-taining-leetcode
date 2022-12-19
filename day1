@@ -1,0 +1,36 @@
+public class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        if (n == 1) {
+            return true;
+        }
+        if (n % 2 != 0) {
+            return false;
+        }
+        return isPowerOfTwo(n / 2);
+    }
+}
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        int majorityCount = nums.length/2;
+
+        for (int num : nums) {
+            int count = 0;
+            for (int elem : nums) {
+                if (elem == num) {
+                    count += 1;
+                }
+            }
+
+            if (count > majorityCount) {
+                return num;
+            }
+
+        }
+
+        return -1;    
+    }
+}
